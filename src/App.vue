@@ -1,21 +1,24 @@
 <template>
-  <div class="gnb">
-    <ul>
-      <li v-for="i in menu" :key="i">{{i}}</li>
-    </ul>
-  </div>
-  <Banner />
-  <div class="container">
-    <RoomList  v-for="(obj, i) in products" :key="i" @click="modal(obj.id)" :products="obj" />
-  </div>
-  <Modal :modalState="modalState" />
+  <SliderBom />
+<!--  <div class="gnb">-->
+<!--    <ul>-->
+<!--      <li v-for="i in menu" :key="i">{{i}}</li>-->
+<!--    </ul>-->
+<!--  </div>-->
+<!--  <Banner />-->
+<!--  <div class="container">-->
+<!--    <RoomList  v-for="(obj, i) in products" :key="i" @click="modal(obj.id)" :products="obj" />-->
+<!--  </div>-->
+<!--  <Modal :modalState="modalState" />-->
 </template>
 
 <script>
 import rooms from '@/data/services.js'
-import Banner from "@/components/Banner";
-import Modal from "@/components/Modal";
-import RoomList from "@/components/RoomList";
+// import Banner from "@/components/Banner";
+// import Modal from "@/components/Modal";
+// import RoomList from "@/components/RoomList";
+import SliderBom from "@/components/Slide";
+import '@/assets/css/slider.scss'
 
 export default {
   name: 'App',
@@ -38,9 +41,10 @@ export default {
     }
   },
   components: {
-    RoomList,
-    Modal,
-    Banner
+    // RoomList,
+    // Modal,
+    // Banner,
+    SliderBom
   }
 }
 </script>

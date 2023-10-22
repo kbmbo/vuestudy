@@ -1,0 +1,71 @@
+.host-slider {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  .slide-view {
+    width: 60%;
+    position: relative;
+    overflow: hidden;
+    .panel-wrap {
+      display: flex;
+      transition: all .5s;
+      .panel {
+        opacity: 0;
+        transform: scale(.8);
+        transition: all .4s;
+        img {
+          width: 100%;
+          aspect-ratio: 2/3;
+          object-fit: cover;
+        }
+        &.slide-next, &.slide-prev {
+          opacity: 1;
+          transform: scale(.8);
+        }
+        &.slide-active {
+          z-index: 10;
+          opacity: 1;
+          transform:scale(1);
+          margin: 0 -6%;
+        }
+      }
+    }
+  }
+
+  .nav-warp {
+    button {
+      position: absolute;
+      top: calc(50% - 5vmin);
+      outline: 0;
+      border: 0;
+      background-color: transparent;
+      font-size: 0;
+      width: 4.5vmin;
+      height: 10vmin;
+      &.prev {
+        left: 0;
+      }
+      &.next {
+        right: 0;
+      }
+      &:before, &:after { content: ''; display: block; width: 3px; height: 50%; background-color: #c3c3c3; position: absolute; }
+      &.prev:before, &.next:after { transform: rotate(-45deg); }
+      &.prev:after, &.next:before { transform: rotate(45deg); }
+      &.prev:before, &.next:before { bottom: 0.8vmin }
+      &.prev:after, &.next:after { top: 0.8vmin }
+    }
+  }
+}
+
+.imgWrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  p {
+    position: absolute;
+  }
+}
